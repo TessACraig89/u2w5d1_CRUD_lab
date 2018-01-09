@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  </head>
-  <body>
-
+<% include ./partials/boilerplate %>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        WDI-Plus-TX: dinosaurs
+        Types of Dinosaurs
       </a>
     </nav>
 
@@ -28,9 +20,8 @@
   <br>
   <div class="container">
     <form method='POST' action='/dinosaurs'>
-      <label>Name</label>
+      <label>Dinosaur Name</label>
       <input name='name' type='text' />
     </form>
   </div>
-  </body>
-</html>
+<% include ./partials/end %>
