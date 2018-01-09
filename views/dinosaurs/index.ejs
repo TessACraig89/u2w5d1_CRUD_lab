@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        WDI-Plus-TX: dinosaurs
+      </a>
+    </nav>
+
+    <br>
+
+    <div class="container">
+
+    	<ul class="list-group">
+  	  	<% dinosaursArray.forEach( (dinosaur) => { %>
+  			<a href="/dinosaurs/<%= dinosaur.id %>"><li class="list-group-item"> <%= dinosaur.name %> | <a href="<%= dinosaur.image %>"> Image </a> </li></a>
+  		  <% }) %>
+
+  	  </ul>
+  </div>
+  <br>
+  <div class="container">
+    <form method='POST' action='/dinosaurs'>
+      <label>Name</label>
+      <input name='name' type='text' />
+    </form>
+  </div>
+  </body>
+</html>

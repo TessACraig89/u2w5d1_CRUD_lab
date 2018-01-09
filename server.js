@@ -1,15 +1,29 @@
-const express = require('express');
+//set up express
+const express    = require('express');
+const app        = express();
 
-const app = express();
+//require routes file
+const dinosaurs  = require('./routes/dinosaurs');
 
-app.get('/', (req, res) => {
-			res.send('sup')
-			// res.render("hi");
-})
+//require bodyParser
+const bodyParser = require('body-parser');
 
-// in order to serve static files from our server
-app.use(express.static('public'));
+//re
+const path       = require('path');
+const morgan     = require('morgan');
 
-app.listen( 3000, () => {
-    console.log('listening')
-})
+
+app.use(bodyParser.json());
+app.use(morgan('tiny'));
+app.use('/', dinosaurs);
+
+//tell the app where to look for templates
+app.set('views', path.join(__dirname, 'views'));
+
+//tell the app what kind of template to expect
+app.set('view engine', 'ejs');
+
+// set up listen
+app.listen(3000, () => {
+	console.log("listening");
+});

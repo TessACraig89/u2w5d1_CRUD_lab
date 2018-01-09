@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  </head>
+  <body>
+
+  	<nav class="navbar navbar-light bg-light">
+	  <a class="navbar-brand" href="#">
+	    <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+	    WDI-Plus-TX: dinosaurs
+	  </a>
+	</nav>
+
+	<br>
+
+  	<!-- <div class="container">
+	<h1> <%= dinosaur.name%> </h1>
+		<ul class="list-group">
+		<% dinosaur.keywords.forEach( (keyword) => { %>
+			<li class="list-group-item"> <%= keyword %> </li>
+		<% }) %>
+		</ul> -->
+		<br>
+		<a href="<%= dinosaur.image %>"> Image </a>
+  	<br>
+
+  	<form action="/dinosaurs/<%=dinosaur.id%>?_method=DELETE" method="POST">
+  		<input class="btn btn-danger" type="submit" value="Delete it!"/>
+  	</form>
+  </body>
+</html>
