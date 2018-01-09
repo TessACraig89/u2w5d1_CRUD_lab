@@ -8,7 +8,7 @@ const router         = express.Router();
 const dinosaursArray = require('../models/dinosaurs_data.js');
 const bodyParser     = require('body-parser')
 
-
+// NEED TO LOOK OVER
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 //when routed to /dinosaurs look in dinosaurs/index.ejs to get and render dinosaursArray
