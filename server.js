@@ -8,13 +8,18 @@ const dinosaurs  = require('./routes/dinosaurs');
 //require bodyParser
 const bodyParser = require('body-parser');
 
-//re
+//LOOK OVER PATH
 const path       = require('path');
+
+//require morgan
 const morgan     = require('morgan');
 
-
 app.use(bodyParser.json());
+
+//set up morgan to show tiny amount of info
 app.use(morgan('tiny'));
+
+//when routed to homepage use dinosaurs router file
 app.use('/', dinosaurs);
 
 //tell the app where to look for templates
